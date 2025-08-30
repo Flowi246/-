@@ -102,10 +102,19 @@ body{
 /* Tiles */
 .tiles{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  grid-template-columns: repeat(3, 1fr); /* всегда 3 в ряд */
   gap:14px;
   margin:0 auto;
 }
+
+/* адаптив для планшетов/мобилок */
+@media (max-width:860px){
+  .tiles{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width:540px){
+  .tiles{ grid-template-columns: 1fr; }
+}
+
 .tile{
   display:flex; flex-direction:column; align-items:flex-start; gap:6px;
   padding:16px;
